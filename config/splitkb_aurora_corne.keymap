@@ -10,6 +10,14 @@
 #include "keys_se.h"
 
 / {
+        combos {
+		compatible = "zmk,combos";
+		combo_layer_three {
+			timeout-ms = <50>;
+			key-positions = <19 40>;
+			bindings = <&mo 3>;
+		};
+	};
         keymap {
                 compatible = "zmk,keymap";
 
@@ -17,40 +25,52 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  Å   |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  Ö  |  Ä   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  -  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  | ALT | ESC  |
+//                    | GUI | LWR | SPC |   | ENT | RSE  | BKSP|
                         bindings = <
    &kp TAB   &kp SE_Q &kp SE_W &kp SE_E &kp SE_R &kp SE_T   &kp SE_Y &kp SE_U  &kp SE_I     &kp SE_O   &kp SE_P    &kp SE_ARNG
    &kp LCTRL &kp SE_A &kp SE_S &kp SE_D &kp SE_F &kp SE_G   &kp SE_H &kp SE_J  &kp SE_K     &kp SE_L   &kp SE_ODIA &kp SE_ADIA
-   &kp LSHFT &kp SE_Z &kp SE_X &kp SE_C &kp SE_V &kp SE_B   &kp SE_N &kp SE_M  &kp SE_COMM &kp SE_DOT &kp SE_MINS &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+   &kp LSHFT &kp SE_Z &kp SE_X &kp SE_C &kp SE_V &kp SE_B   &kp SE_N &kp SE_M  &kp SE_COMM &kp SE_DOT &kp RALT     &kp ESC
+                               &kp LGUI &mo 2    &kp SPACE  &kp RET  &mo 1     &kp BSPC
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+// |      |     |  7  |  8  |  9  |     |   |     |     |     |     |     | BKSP |
+// |      |     |  4  |  5  |  6  |     |   | LFT | DWN |  UP | RGT |     |      |
+// |      |     |  1  |  2  |  3  |  0  |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+    &trans &trans &kp N7 &kp N8   &kp N8 &trans      &kp LC(LS(TAB)) &kp RC(TAB)   &kp LG(LBKT) &trans    &trans &kp BSPC
+    &trans &trans &kp N4 &kp N5   &kp N6 &trans      &kp LEFT        &kp DOWN      &kp UP       &kp RIGHT &trans &trans
+    &trans &trans &kp N1 &kp N2   &kp N3 &kp N0      &trans          &trans        &trans       &trans    &trans &trans
+                         &kp LGUI &trans &kp SPACE   &kp RET         &trans        &kp RALT
                         >;
                 };
-
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+// |  TAB |  @  |  *  | "|" |  &  |  ?  |   |  ~  |  $  |     |     |  \  |  §  |
+// | CTRL |  -  |  +  |  <  |  =  |  !  |   |  '  |  (  |  {  |  [  |  /  |     |
+// | SHFT |  ^  |     |  >  |  #  |  %  |   |  "  |  )  |  }  |  ]  |  €  |     |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &kp  TAB  &kp SE_AT   &kp SE_ASTR &kp SE_PIPE &kp SE_AMPR &kp SE_QUES    &kp SE_TILD &kp SE_DLR  &trans      &trans      &kp SE_BSLS &kp SE_SECT
+   &kp LCTRL &kp SE_MINS &kp SE_PLUS &kp SE_LABK &kp SE_EQL  &kp SE_EXLM    &kp SE_QUOT &kp SE_LPRN &kp SE_LCBR &kp SE_LBRC &kp SE_SLSH &trans
+   &kp LSHFT &kp SE_CIRC &trans      &kp SE_RABK &kp SE_HASH &kp SE_PERC    &kp SE_DQUO &kp SE_RPRN &kp SE_RCBR &kp SE_RBRC &kp SE_EURO &trans
+                                     &kp LGUI    &trans      &kp SPACE      &kp RET     &trans      &kp RALT
+                        >;
+                };
+                media_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |    |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+// |      |     |     |     |     |     |   | LFT | DWN |  UP | RGT |     |      |
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |      |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        bindings = <
+   &kp TAB    &kp SE_APPL  &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
+   &trans     &trans       &trans       &trans       &trans       &trans         &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans   &trans   &trans &trans    &trans &trans
+                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
         };
