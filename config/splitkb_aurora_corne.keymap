@@ -46,7 +46,7 @@
     bindings = <
       &kp LCTRL &kp SE_Q &kp SE_W &kp SE_E &kp SE_R &kp SE_T   &kp SE_Y &kp SE_U  &kp SE_I     &kp SE_O   &kp SE_P    &kp SE_ARNG
       &kp TAB   &kp SE_A &kp SE_S &kp SE_D &kp SE_F &kp SE_G   &kp SE_H &kp SE_J  &kp SE_K     &kp SE_L   &kp SE_ODIA &kp SE_ADIA
-      &kp LSHFT &kp SE_Z &kp SE_X §td_cc   &td_vp   &kp SE_B   &kp SE_N &kp SE_M  &kp SE_COMM &kp SE_DOT &kp RALT     &kp ESC
+      &kp LSHFT &kp SE_Z &kp SE_X &td_cc   &td_vp   &kp SE_B   &kp SE_N &kp SE_M  &kp SE_COMM &kp SE_DOT &kp RALT     &kp ESC
                                   &kp LGUI &mo 2    &kp SPACE  &kp RET  &mo 1     &kp BSPC
     >;
     };
