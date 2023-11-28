@@ -28,7 +28,7 @@
     };
     td_vp: tap_dance_v_paste {
       compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_C_COPY";
+      label = "TAP_DANCE_V_PASTE";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
       bindings = <&kp SE_V>, <&kp LG(SE_V)>;
@@ -57,10 +57,10 @@
 // |      |     |  1  |  2  |  3  |  0  |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
     bindings = <
-      &trans &trans &kp N7 &kp N8   &kp N8 &trans      &kp LC(LS(TAB)) &kp RC(TAB)   &kp LG(LBKT) &trans    &trans &kp BSPC
-      &trans &trans &kp N4 &kp N5   &kp N6 &trans      &kp LEFT        &kp DOWN      &kp UP       &kp RIGHT &trans &trans
-      &trans &trans &kp N1 &kp N2   &kp N3 &kp N0      &trans          &trans        &trans       &trans    &trans &trans
-                           &kp LGUI &trans &kp SPACE   &kp RET         &trans        &kp RALT
+      &trans &trans &kp N7 &kp N8   &kp N8 &trans      &trans           &kp LC(LS(TAB)) &kp RC(TAB) &kp LG(LBKT)     &trans &kp BSPC
+      &trans &trans &kp N4 &kp N5   &kp N6 &trans      &kp LEFT         &kp DOWN        &kp UP      &kp RIGHT        &trans &trans
+      &trans &trans &kp N1 &kp N2   &kp N3 &kp N0      &kp LG(LS(LEFT)) &trans          &trans      &kp LG(LS(RIGHT)) &trans &trans
+                           &kp LGUI &trans &kp SPACE   &kp RET          &trans          &kp RALT
     >;
     };
     raise_layer {
