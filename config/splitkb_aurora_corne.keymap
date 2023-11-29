@@ -65,14 +65,14 @@
     };
     raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  @  |  *  | "|" |  &  |  ?  |   |  ~  |  $  |     |     |  \  |  §  |
+// |  TAB |  @  |  *  | "|" |  &  |  ~  |   |  `  |  $  |     |     |  \  |  §  |
 // | CTRL |  -  |  +  |  <  |  =  |  !  |   |  '  |  (  |  {  |  [  |  /  |     |
-// | SHFT |  ^  |     |  >  |  #  |  %  |   |  "  |  )  |  }  |  ]  |  €  |     |
+// | SHFT |  ^  |  ~  |  >  |  #  |  %  |   |  "  |  )  |  }  |  ]  |  €  |     |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
     bindings = <
-      &kp  TAB  &kp SE_AT   &kp SE_ASTR &kp SE_PIPE &kp SE_AMPR &kp SE_QUES    &kp SE_TILD &kp SE_DLR  &trans      &trans      &kp SE_BSLS &kp SE_SECT
+      &kp  TAB  &kp SE_AT   &kp SE_ASTR &kp SE_PIPE &kp SE_AMPR &kp SE_QUES    &kp SE_ACUT &kp SE_DLR  &trans      &trans      &kp SE_BSLS &kp SE_SECT
       &kp LCTRL &kp SE_MINS &kp SE_PLUS &kp SE_LABK &kp SE_EQL  &kp SE_EXLM    &kp SE_QUOT &kp SE_LPRN &kp SE_LCBR &kp SE_LBRC &kp SE_SLSH &trans
-      &kp LSHFT &kp SE_CIRC &trans      &kp SE_RABK &kp SE_HASH &kp SE_PERC    &kp SE_DQUO &kp SE_RPRN &kp SE_RCBR &kp SE_RBRC &kp SE_EURO &trans
+      &kp LSHFT &kp SE_CIRC &kp SE_TILD &kp SE_RABK &kp SE_HASH &kp SE_PERC    &kp SE_DQUO &kp SE_RPRN &kp SE_RCBR &kp SE_RBRC &kp SE_EURO &trans
                                         &kp LGUI    &trans      &kp SPACE      &kp RET     &trans      &kp RALT
     >;
     };
