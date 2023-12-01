@@ -17,7 +17,7 @@
 #define SE_8    N8    // 8
 #define SE_9    N9    // 9
 #define SE_0    N0    // 0
-#define SE_PLUS KC_MINS // +
+#define SE_PLUS MINUS // +
 #define SE_ACUT PLUS // ´
 #define SE_Q    Q    // Q
 #define SE_W    W    // W
