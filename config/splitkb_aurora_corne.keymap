@@ -43,15 +43,15 @@
 
     default_layer {
 // -----------------------------------------------------------------------------------------
-// | CTRL |  Q  |  W  |  E   |  R  |  T  |   |  Y   |  U   |  I  |  O  |  P  |  Å   |
+// | ESC  |  Q  |  W  |  E   |  R  |  T  |   |  Y   |  U   |  I  |  O  |  P  |  Å   |
 // | TAB  |  A  |  S  |  D   |  F  |  G  |   |  H   |  J   |  K  |  L  |  Ö  |  Ä   |
-// | SHFT |  Z  |  X  |  C   |  V  |  B  |   |  N   |  M   |  ,  |  .  | ESC | RET  |
+// | SHFT |  Z  |  X  |  C   |  V  |  B  |   |  N   |  M   |  ,  |  .  |  -  | RET  |
 //                    | SHFT | LWR | SPC |   | CTRL | RSE  | BKSP|
     bindings = <
-      &kp LCTRL &kp SE_Q &kp SE_W &kp SE_E      &kp SE_R          &kp SE_T   &kp SE_Y  &kp SE_U      &kp SE_I      &kp SE_O   &kp SE_P    &kp SE_ARNG
-      &kp TAB   &kp SE_A &kp SE_S &hm LALT SE_D &hm LGUI SE_F     &kp SE_G   &kp SE_H  &hm RGUI SE_J &hm RALT SE_K &kp SE_L   &kp SE_ODIA &kp SE_ADIA
-      &kp LSHFT &kp SE_Z &kp SE_X &td SE_C SE_C &td SE_V LG(SE_V) &kp SE_B   &kp SE_N  &kp SE_M      &kp SE_COMM   &kp SE_DOT &kp ESC     &kp RET
-                                  &kp LSHFT     &mo 2             &kp SPACE  &kp LCTRL &mo 1         &td BSPC RA(BSPC)
+      &kp ESC         &kp SE_Q &kp SE_W &kp SE_E      &kp SE_R          &kp SE_T   &kp SE_Y          &kp SE_U      &kp SE_I            &kp SE_O           &kp SE_P    &kp SE_ARNG
+      &td TAB LG(TAB) &kp SE_A &kp SE_S &hm LALT SE_D &hm LGUI SE_F     &kp SE_G   &kp SE_H          &hm RGUI SE_J &hm RALT SE_K       &kp SE_L           &kp SE_ODIA &kp SE_ADIA
+      &kp LSHFT       &kp SE_Z &kp SE_X &td SE_C SE_C &td SE_V LG(SE_V) &kp SE_B   &kp SE_N          &kp SE_M      &td SE_COMM SE_EXLM &td SE_DOT SE_QUES &kp SE_MINS &kp RET
+                                  &kp LSHFT     &mo 2             &kp SPACE  &td BSPC RA(BSPC) &mo 1         &kp LCTRL
     >;
     };
     lower_layer {
@@ -59,38 +59,38 @@
 // |      |     |  7  |  8  |  9  |     |   |     |     |     |     |     | BKSP |
 // |      |     |  4  |  5  |  6  |     |   | LFT | DWN |  UP | RGT |     |      |
 // |      |     |  1  |  2  |  3  |  0  |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+//                    |     |     |     |   |     |     |     |
     bindings = <
-      &trans &trans &kp N7 &kp N8   &kp N8 &trans      &trans   &kp LG(LA(LEFT)) &kp LG(LA(RIGHT)) &kp LG(LBKT) &trans &kp BSPC
-      &trans &trans &kp N4 &kp N5   &kp N6 &trans      &kp LEFT &kp DOWN         &kp UP            &kp RIGHT    &trans &trans
-      &trans &trans &kp N1 &kp N2   &kp N3 &kp N0      &trans   &kp LA(LS(LEFT)) &kp LA(LS(RIGHT)) &trans       &trans &trans
-                           &kp LGUI &trans &kp SPACE   &kp RET  &trans           &kp RALT
+      &trans &trans &kp N7 &kp N8   &kp N8 &trans      &trans            &kp LG(LA(LEFT)) &kp LG(LA(RIGHT)) &kp LG(LBKT)        &trans &kp BSPC
+      &trans &trans &kp N4 &kp N5   &kp N6 &trans      &td LEFT LG(LEFT) &kp DOWN         &kp UP            &td RIGHT LG(RIGHT) &trans &trans
+      &trans &trans &kp N1 &kp N2   &kp N3 &kp N0      &trans            &kp LA(LS(LEFT)) &kp LA(LS(RIGHT)) &trans              &trans &trans
+                           &trans   &trans &trans      &trans            &trans           &trans
     >;
     };
     raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  @  |  *  | "|" |  &  |  ~  |   |  `  |  $  |     |     |  \  |  §  |
-// | CTRL |  -  |  +  |  <  |  =  |  !  |   |  '  |  (  |  {  |  [  |  /  |     |
-// | SHFT |  ^  |  ~  |  >  |  #  |  %  |   |  "  |  )  |  }  |  ]  |  €  |     |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |   |  @  |  *  | "|" |  &  |  \  |   |  `  |  $  |  &  |  *  |  \  |  §  |
+// |   |  -  |  +  |  <  |  =  |  /  |   |  '  |  (  |  {  |  [  |  /  |     |
+// |   |  ^  |  ~  |  >  |  #  |  %  |   |  "  |  )  |  }  |  ]  |  €  |     |
+//                    |     |     |     |   |     |     |     |
     bindings = <
-      &kp  TAB  &kp SE_AT   &kp SE_ASTR &kp SE_PIPE &kp SE_AMPR &kp SE_QUES    &kp SE_ACUT &kp SE_DLR  &trans      &trans      &kp SE_BSLS &kp SE_SECT
-      &kp LCTRL &kp SE_MINS &kp SE_PLUS &kp SE_LABK &kp SE_EQL  &kp SE_EXLM    &kp SE_QUOT &kp SE_LPRN &kp SE_LCBR &kp SE_LBRC &kp SE_SLSH &trans
-      &kp LSHFT &kp SE_CIRC &kp SE_TILD &kp SE_RABK &kp SE_HASH &kp SE_PERC    &kp SE_DQUO &kp SE_RPRN &kp SE_RCBR &kp SE_RBRC &kp SE_EURO &trans
-                                        &kp LGUI    &trans      &kp SPACE      &kp RET     &trans      &kp RALT
+      &trans &kp SE_AT   &kp SE_ASTR &td SE_PIPE LC(LG(LS(N4))) &kp SE_AMPR &kp SE_BSLS    &kp SE_ACUT &kp SE_DLR  &kp SE_AMPR &kp SE_ASTR &kp SE_BSLS &kp SE_SECT
+      &trans &kp SE_MINS &kp SE_PLUS &kp SE_LABK                &kp SE_EQL  &kp SE_SLSH    &kp SE_QUOT &kp SE_LPRN &kp SE_LCBR &kp SE_LBRC &kp SE_SLSH &trans
+      &trans &kp SE_CIRC &kp SE_TILD &kp SE_RABK                &kp SE_HASH &kp SE_PERC    &kp SE_DQUO &kp SE_RPRN &kp SE_RCBR &kp SE_RBRC &kp SE_EURO &trans
+                                        &trans                     &trans      &trans         &trans      &trans      &trans
     >;
     };
     media_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |    |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// |      |     |     |     |     |     |   | LFT | DWN |  UP | RGT |     |      |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |  |    |  2  |  3  |  4  |  5   |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+// |  |     |     |     |     |      |   | LFT | DWN |  UP | RGT |     |      |
+// |  | BT1 | BT2 | BT3 | BT4 | BTCLR|   |     |     |     |     |     |      |
+//                      |     |      |   |     |     |     |     |
     bindings = <
-      &kp TAB    &kp SE_APPL  &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-      &trans     &trans       &trans       &trans       &trans       &trans         &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-      &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans   &trans   &trans &trans    &trans &trans
-                                           &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+      &trans &kp SE_APPL  &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
+      &trans &trans       &trans       &trans       &trans       &trans         &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+      &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR     &trans   &trans   &trans &trans    &trans &trans
+                                       &trans       &trans       &trans         &trans   &trans   &trans
     >;
     };
   };
