@@ -19,19 +19,23 @@
 		};
 	};
   behaviors {
-    td_cc: tap_dance_c_copy {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_C_COPY";
-      #binding-cells = <0>;
+    hm: homerow_mods {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS";
+      #binding-cells = <2>;
       tapping-term-ms = <200>;
-      bindings = <&kp SE_C>, <&kp LG(SE_C)>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
     };
-    td_vp: tap_dance_v_paste {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_V_PASTE";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&kp SE_V>, <&kp LG(SE_V)>;
+    td: tapdance {
+      compatible = "zmk,behavior-hold-tap";
+      label = "TAPDANCE";
+      #binding-cells = <2>;
+      tapping-term-ms = <150>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
     };
   };
   keymap {
@@ -39,15 +43,15 @@
 
     default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  Å   |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  Ö  |  Ä   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  | ALT | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | BKSP|
+// | CTRL |  Q  |  W  |  E   |  R  |  T  |   |  Y   |  U   |  I  |  O  |  P  |  Å   |
+// | TAB  |  A  |  S  |  D   |  F  |  G  |   |  H   |  J   |  K  |  L  |  Ö  |  Ä   |
+// | SHFT |  Z  |  X  |  C   |  V  |  B  |   |  N   |  M   |  ,  |  .  | ESC | RET  |
+//                    | SHFT | LWR | SPC |   | CTRL | RSE  | BKSP|
     bindings = <
-      &kp LCTRL &kp SE_Q &kp SE_W &kp SE_E &kp SE_R &kp SE_T   &kp SE_Y &kp SE_U  &kp SE_I     &kp SE_O   &kp SE_P    &kp SE_ARNG
-      &kp TAB   &kp SE_A &kp SE_S &kp SE_D &kp SE_F &kp SE_G   &kp SE_H &kp SE_J  &kp SE_K     &kp SE_L   &kp SE_ODIA &kp SE_ADIA
-      &kp LSHFT &kp SE_Z &kp SE_X &td_cc   &td_vp   &kp SE_B   &kp SE_N &kp SE_M  &kp SE_COMM &kp SE_DOT &kp RALT     &kp ESC
-                                  &kp LGUI &mo 2    &kp SPACE  &kp RET  &mo 1     &kp BSPC
+      &kp LCTRL &kp SE_Q &kp SE_W &kp SE_E      &kp SE_R          &kp SE_T   &kp SE_Y  &kp SE_U      &kp SE_I      &kp SE_O   &kp SE_P    &kp SE_ARNG
+      &kp TAB   &kp SE_A &kp SE_S &hm LALT SE_D &hm LGUI SE_F     &kp SE_G   &kp SE_H  &hm RGUI SE_J &hm RALT SE_K &kp SE_L   &kp SE_ODIA &kp SE_ADIA
+      &kp LSHFT &kp SE_Z &kp SE_X &td SE_C SE_C &td SE_V LG(SE_V) &kp SE_B   &kp SE_N  &kp SE_M      &kp SE_COMM   &kp SE_DOT &kp ESC     &kp RET
+                                  &kp LSHFT     &mo 2             &kp SPACE  &kp LCTRL &mo 1         &td BSPC RA(BSPC)
     >;
     };
     lower_layer {
