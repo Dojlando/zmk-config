@@ -9,6 +9,11 @@
 #include <dt-bindings/zmk/bt.h>
 #include "keys_se.h"
 
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <200>;
+};
+
 / {
   combos {
 		compatible = "zmk,combos";
@@ -48,10 +53,10 @@
 // | SHFT |  Z  |  X  |  C   |  V  |  B  |   |  N   |  M   |  ,  |  .  |  -  | RET  |
 //                    | SHFT | LWR | SPC |   | CTRL | RSE  | BKSP|
     bindings = <
-      &kp ESC         &kp SE_Q &kp SE_W &kp SE_E          &kp SE_R          &kp SE_T   &kp SE_Y          &kp SE_U      &kp SE_I            &kp SE_O           &kp SE_P    &kp SE_ARNG
-      &td LG(TAB) TAB &kp SE_A &kp SE_S &hm LALT SE_D     &hm LGUI SE_F     &kp SE_G   &kp SE_H          &hm RGUI SE_J &hm RALT SE_K       &kp SE_L           &kp SE_ODIA &kp SE_ADIA
-      &kp LSHFT       &kp SE_Z &kp SE_X &td LG(SE_C) SE_C &td LG(SE_V) SE_V &kp SE_B   &kp SE_N          &kp SE_M      &td SE_EXLM SE_COMM &td SE_QUES SE_DOT &kp SE_MINS &kp RET
-                                        &kp LSHFT         &mo 2             &kp SPACE  &td RA(BSPC) BSPC &mo 1         &kp LCTRL
+      &kp ESC         &kp SE_Q &kp SE_W &kp SE_E          &kp SE_R          &kp SE_T                &kp SE_Y          &kp SE_U      &kp SE_I            &kp SE_O           &kp SE_P    &kp SE_ARNG
+      &td LG(TAB) TAB &kp SE_A &kp SE_S &hm LALT SE_D     &hm LGUI SE_F     &kp SE_G                &kp SE_H          &hm RGUI SE_J &hm RALT SE_K       &kp SE_L           &kp SE_ODIA &kp SE_ADIA
+      &kp LSHFT       &kp SE_Z &kp SE_X &td LG(SE_C) SE_C &td LG(SE_V) SE_V &kp SE_B                &kp SE_N          &kp SE_M      &td SE_EXLM SE_COMM &td SE_QUES SE_DOT &kp SE_MINS &kp RET
+                                        &kp LSHFT         &mo 2             &mt LC(LS(LALT)) SPACE  &td RA(BSPC) BSPC &mo 1         &kp LCTRL
     >;
     };
     lower_layer {
