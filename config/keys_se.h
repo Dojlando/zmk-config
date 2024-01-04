@@ -107,7 +107,7 @@
 #define SE_FI   RA(SE_L)    // ﬁ
 #define SE_OSTR RA(SE_ODIA) // Ø
 #define SE_AE   RA(SE_ADIA) // Æ
-#define SE_AT   RA(SE_QUOT) // @
+#define SE_AT   RA(SE_2) // @
 #define SE_LTEQ RA(SE_LABK) // ≤
 #define SE_DIV  RA(SE_Z)    // ÷
 #define SE_CCED RA(SE_C)    // Ç
