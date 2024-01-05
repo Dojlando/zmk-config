@@ -6,7 +6,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 // Aliases
-#define SE_SECT GRAVE  // §
+#define SE_SECT NON_US_BACKSLASH  // §
 #define SE_1    N1    // 1
 #define SE_2    N2    // 2
 #define SE_3    N3    // 3
@@ -43,7 +43,7 @@
 #define SE_ODIA SEMICOLON // Ö
 #define SE_ADIA SINGLE_QUOTE // Ä
 #define SE_QUOT NON_US_HASH // '
-#define SE_LABK NON_US_BACKSLASH // <
+#define SE_LABK GRAVE // <
 #define SE_Z    Z    // Z
 #define SE_X    X    // X
 #define SE_C    C    // C
