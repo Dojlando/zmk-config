@@ -53,10 +53,10 @@
 // | SHFT |  Z  |  X  |  C   |  V  |  B  |   |  N   |  M   |  ,  |  .  |  -  | RET  |
 //                    | SHFT | LWR | SPC |   | BKSP | RSE  | CTRL|
     bindings = <
-      &kp ESC   &kp SE_Q &kp SE_W       &kp SE_E          &kp SE_R          &kp SE_T                &kp SE_Y          &kp SE_U      &kp SE_I            &kp SE_O           &kp SE_P    &kp SE_ARNG
-      &kp TAB   &kp SE_A &hm LCTRL SE_S &hm LALT SE_D     &hm LGUI SE_F     &kp SE_G                &kp SE_H          &hm RGUI SE_J &hm RALT SE_K       &hm RCTRL SE_L     &kp SE_ODIA &kp SE_ADIA
-      &kp LSHFT &kp SE_Z &kp SE_X       &td LG(SE_C) SE_C &td LG(SE_V) SE_V &kp SE_B                &kp SE_N          &kp SE_M      &td SE_EXLM SE_COMM &td SE_QUES SE_DOT &kp SE_MINS &kp RET
-                                        &kp LSHFT         &mo 2             &mt LC(LS(LALT)) SPACE  &td RA(BSPC) BSPC &mo 1         &kp RET
+      &kp ESC   &kp SE_Q       &kp SE_W       &kp SE_E          &kp SE_R          &kp SE_T                &kp SE_Y &kp SE_U      &kp SE_I            &kp SE_O           &kp SE_P          &kp SE_ARNG
+      &kp TAB   &hm LSHFT SE_A &hm LCTRL SE_S &hm LALT SE_D     &hm LGUI SE_F     &kp SE_G                &kp SE_H &hm RGUI SE_J &hm RALT SE_K       &hm RCTRL SE_L     &hm RSHFT SE_ODIA &kp SE_ADIA
+      &kp LSHFT &kp SE_Z       &kp SE_X       &td LG(SE_C) SE_C &td LG(SE_V) SE_V &kp SE_B                &kp SE_N &kp SE_M      &td SE_EXLM SE_COMM &td SE_QUES SE_DOT &kp SE_MINS       &kp RET
+                                              &kp LSHFT         &mo 2             &mt LC(LS(LALT)) SPACE  &kp BSPC &mo 1         &kp RET
     >;
     };
     lower_layer {
@@ -79,10 +79,10 @@
 // |   |  ^  |  ~  |  >  |  #  |  %  |   |  "  |  )  |  }  |  ]  |  €  |     |
 //                    |     |     |     |   |     |     |     |
     bindings = <
-      &trans &kp SE_AT   &kp SE_ASTR       &td LC(LG(LS(N4))) SE_PIPE &kp SE_AMPR     &kp SE_BSLS    &kp SE_ACUT &kp SE_DLR       &kp SE_AMPR      &kp SE_ASTR       &kp SE_BSLS &kp SE_SECT
-      &trans &kp SE_MINS &hm LCTRL SE_PLUS &hm LALT SE_LABK           &hm LGUI SE_EQL &kp SE_SLSH    &kp SE_QUOT &hm RGUI SE_LPRN &hm RALT SE_LCBR &hm RCTRL SE_LBRC &kp SE_SLSH &trans
-      &trans &kp SE_CIRC &kp SE_TILD       &kp SE_RABK                &kp SE_HASH     &kp SE_PERC    &kp SE_DQUO &kp SE_RPRN      &kp SE_RCBR      &kp SE_RBRC       &kp SE_EURO &trans
-                                           &trans                     &trans          &trans         &trans      &trans           &trans
+      &trans &kp SE_AT         &kp SE_ASTR       &td LC(LG(LS(N4))) SE_PIPE &kp SE_AMPR     &kp SE_BSLS    &kp SE_ACUT &kp SE_DLR       &kp SE_AMPR      &kp SE_ASTR       &kp SE_BSLS       &kp SE_SECT
+      &trans &hm LSHFT SE_MINS &hm LCTRL SE_PLUS &hm LALT SE_LABK           &hm LGUI SE_EQL &kp SE_SLSH    &kp SE_QUOT &hm RGUI SE_LPRN &hm RALT SE_LCBR &hm RCTRL SE_LBRC &hm RSHFT SE_SLSH &trans
+      &trans &kp SE_CIRC       &kp SE_TILD       &kp SE_RABK                &kp SE_HASH     &kp SE_PERC    &kp SE_DQUO &kp SE_RPRN      &kp SE_RCBR      &kp SE_RBRC       &kp SE_EURO       &trans
+                                                 &trans                     &trans          &trans         &trans      &trans           &trans
     >;
     };
     media_layer {
