@@ -9,11 +9,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include "keys_se.h"
 
-#define QWERTY  0
-#define COLEMAK 1
-#define NAVI    2
-#define SYMB    3
-#define MEDIA   4
+#define COLEMAK   0
+#define QWERTY    1
+#define NAVI      2
+#define SYMB      3
+#define MEDIA     4
+#define ONE_SHOT  5
 
 
 &mt {
@@ -49,23 +50,19 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
+    lm: layer_mods {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LAYER_MODS";
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&sl>;
+    };
   };
   keymap {
     compatible = "zmk,keymap";
 
-    qwerty_layer {
-// -----------------------------------------------------------------------------------------
-// | ESC  |  Q  |  W  |  E   |  R  |  T  |   |  Y   |  U   |  I  |  O  |  P  |  Å   |
-// | TAB  |  A  |  S  |  D   |  F  |  G  |   |  H   |  J   |  K  |  L  |  Ö  |  Ä   |
-// | SHFT |  Z  |  X  |  C   |  V  |  B  |   |  N   |  M   |  ,  |  .  |  -  | RET  |
-//                    | SHFT | LWR | SPC |   | BKSP | RSE  | CTRL|
-    bindings = <
-      &kp ESC   &kp SE_Q       &kp SE_W       &kp SE_E          &kp SE_R          &kp SE_T                &kp SE_Y &kp SE_U      &kp SE_I            &kp SE_O           &kp SE_P          &kp SE_ARNG
-      &kp TAB   &hm LSHFT SE_A &hm LCTRL SE_S &hm LALT SE_D     &hm LGUI SE_F     &kp SE_G                &kp SE_H &hm RGUI SE_J &hm RALT SE_K       &hm RCTRL SE_L     &hm RSHFT SE_ODIA &kp SE_ADIA
-      &kp LSHFT &kp SE_Z       &kp SE_X       &td LG(SE_C) SE_C &td LG(SE_V) SE_V &kp SE_B                &kp SE_N &kp SE_M      &td SE_EXLM SE_COMM &td SE_QUES SE_DOT &kp SE_MINS       &kp RET
-                                              &kp LSHFT         &mo SYMB          &mt LC(LS(LALT)) SPACE  &kp BSPC &mo NAVI      &kp RET
-    >;
-    };
     colemak_dh_layer {
 // -----------------------------------------------------------------------------------------
 // | ESC  |  Q  |  W  |  F   |  P  |  B  |   |  J   |  L   |  U  |  Y  |  Ö  |  Å   |
@@ -76,7 +73,20 @@
       &kp ESC   &kp SE_Q       &kp SE_W       &kp SE_F          &kp SE_P          &kp SE_B                &kp SE_J &kp SE_L      &kp SE_U            &kp SE_Y           &kp SE_ODIA    &kp SE_ARNG
       &kp TAB   &hm LSHFT SE_A &hm LCTRL SE_R &hm LALT SE_S     &hm LGUI SE_T     &kp SE_G                &kp SE_M &hm RGUI SE_N &hm RALT SE_E       &hm RCTRL SE_I     &hm RSHFT SE_O &kp SE_ADIA
       &kp LSHFT &kp SE_Z       &kp SE_X       &td LG(SE_C) SE_C &td LG(SE_V) SE_D &kp SE_V                &kp SE_K &kp SE_H      &td SE_EXLM SE_COMM &td SE_QUES SE_DOT &kp SE_MINS    &kp RET
-                                              &kp LSHFT         &mo SYMB          &mt LC(LS(LALT)) SPACE  &kp BSPC &mo NAVI      &kp RET
+                                              &kp TAB           &lm SYMB ONE_SHOT &mt LC(LS(LALT)) SPACE  &kp BSPC &mo NAVI      &kp RET
+    >;
+    };
+    qwerty_layer {
+// -----------------------------------------------------------------------------------------
+// | ESC  |  Q  |  W  |  E   |  R  |  T  |   |  Y   |  U   |  I  |  O  |  P  |  Å   |
+// | TAB  |  A  |  S  |  D   |  F  |  G  |   |  H   |  J   |  K  |  L  |  Ö  |  Ä   |
+// | SHFT |  Z  |  X  |  C   |  V  |  B  |   |  N   |  M   |  ,  |  .  |  -  | RET  |
+//                    | SHFT | LWR | SPC |   | BKSP | RSE  | CTRL|
+    bindings = <
+      &kp ESC   &kp SE_Q       &kp SE_W       &kp SE_E          &kp SE_R          &kp SE_T                &kp SE_Y &kp SE_U      &kp SE_I            &kp SE_O           &kp SE_P          &kp SE_ARNG
+      &kp TAB   &hm LSHFT SE_A &hm LCTRL SE_S &hm LALT SE_D     &hm LGUI SE_F     &kp SE_G                &kp SE_H &hm RGUI SE_J &hm RALT SE_K       &hm RCTRL SE_L     &hm RSHFT SE_ODIA &kp SE_ADIA
+      &kp LSHFT &kp SE_Z       &kp SE_X       &td LG(SE_C) SE_C &td LG(SE_V) SE_V &kp SE_B                &kp SE_N &kp SE_M      &td SE_EXLM SE_COMM &td SE_QUES SE_DOT &kp SE_MINS       &kp RET
+                                              &trans            &trans            &trans                  &trans   &trans        &trans
     >;
     };
     lower_layer {
@@ -113,9 +123,22 @@
 //                      |     |      |   |     |     |     |     |
     bindings = <
       &trans &kp SE_APPL  &kp N2       &kp N3        &kp N4        &kp N5         &kp N6 &kp N7     &kp N8       &kp N9       &kp N0 &kp BSPC
-      &trans &trans       &trans       &kp C_BRI_DEC &kp C_BRI_INC &tog COLEMAK   &trans &kp C_PREV &kp C_PP     &kp C_NEXT   &trans &trans
+      &trans &trans       &trans       &kp C_BRI_DEC &kp C_BRI_INC &tog QWERTY    &trans &kp C_PREV &kp C_PP     &kp C_NEXT   &trans &trans
       &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR     &trans &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans &trans
                                        &trans        &trans        &trans         &trans &trans     &trans
+    >;
+    };
+    one_shot_layer {
+// -----------------------------------------------------------------------------------------
+// |  |     |     |     |     |    |   |     |     |     |     |     |    |
+// |  |     |     |     |     |    |   |     |  å  |  ä  |  ö  |     |    |
+// |  |     |     |     |     |    |   |     |     |     |     |     |    |
+//                      |     |    |   |     |     |     |     |
+    bindings = <
+      &trans &trans &trans &trans &trans &trans   &trans &trans      &trans      &trans      &trans &trans
+      &trans &trans &trans &trans &trans &trans   &trans &kp SE_ARNG &kp SE_ADIA &kp SE_ODIA &trans &trans
+      &trans &trans &trans &trans &trans &trans   &trans &trans      &trans      &trans      &trans &trans
+                           &trans &trans &trans   &trans &trans      &trans
     >;
     };
   };
