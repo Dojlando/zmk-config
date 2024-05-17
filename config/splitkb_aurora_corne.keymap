@@ -50,14 +50,23 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
-    lm: layer_mods {
+    los: layer_one_shot {
       compatible = "zmk,behavior-hold-tap";
-      label = "LAYER_MODS";
+      label = "LAYER_ONE_SHOT";
       #binding-cells = <2>;
       tapping-term-ms = <200>;
       quick_tap_ms = <0>;
       flavor = "tap-preferred";
       bindings = <&mo>, <&sl>;
+    };
+    lt: layer_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LAYER_TAP";
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&kp>;
     };
   };
   keymap {
@@ -70,10 +79,10 @@
 // | SHFT |  Z  |  X  |  C   |  D  |  V  |   |  K   |  H   |  ,  |  .  |  -  | RET  |
 //                    | SHFT | LWR | SPC |   | BKSP | RSE  | CTRL|
     bindings = <
-      &kp ESC   &kp SE_Q       &kp SE_W       &kp SE_F          &kp SE_P          &kp SE_B                &kp SE_J &kp SE_L      &kp SE_U            &kp SE_Y           &kp SE_ODIA    &kp SE_ARNG
-      &kp TAB   &hm LSHFT SE_A &hm LCTRL SE_R &hm LALT SE_S     &hm LGUI SE_T     &kp SE_G                &kp SE_M &hm RGUI SE_N &hm RALT SE_E       &hm RCTRL SE_I     &hm RSHFT SE_O &kp SE_ADIA
-      &kp LSHFT &kp SE_Z       &kp SE_X       &td LG(SE_C) SE_C &td LG(SE_V) SE_D &kp SE_V                &kp SE_K &kp SE_H      &td SE_EXLM SE_COMM &td SE_QUES SE_DOT &kp SE_MINS    &kp RET
-                                              &kp TAB           &lm SYMB ONE_SHOT &mt LC(LS(LALT)) SPACE  &kp BSPC &mo NAVI      &kp RET
+      &kp ESC   &kp SE_Q       &kp SE_W       &kp SE_F          &kp SE_P          &kp SE_B                 &kp SE_J &kp SE_L      &kp SE_U            &kp SE_Y           &kp SE_ODIA    &kp SE_ARNG
+      &kp TAB   &hm LSHFT SE_A &hm LCTRL SE_R &hm LALT SE_S     &hm LGUI SE_T     &kp SE_G                 &kp SE_M &hm RGUI SE_N &hm RALT SE_E       &hm RCTRL SE_I     &hm RSHFT SE_O &kp SE_ADIA
+      &kp LSHFT &kp SE_Z       &kp SE_X       &td LG(SE_C) SE_C &td LG(SE_V) SE_D &kp SE_V                 &kp SE_K &kp SE_H      &td SE_EXLM SE_COMM &td SE_QUES SE_DOT &kp SE_MINS    &kp RET
+                                              &kp TAB           &los SYMB ONE_SHOT &mt LC(LS(LALT)) SPACE  &kp BSPC &lt NAVI ESC  &kp RET
     >;
     };
     qwerty_layer {
