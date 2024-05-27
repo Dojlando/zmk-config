@@ -96,9 +96,9 @@ layers:
   - {t: ▽, type: trans}
   - Gui+Alt+ LEFT
   - Gui+Alt+ RIGHT
-  - Gui+ [
   - {t: ▽, type: trans}
-  - BSPC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: '4', h: LCTRL}
@@ -138,10 +138,10 @@ layers:
   - '\'
   - '`'
   - '$'
-  - '&'
-  - '*'
-  - '\'
+  - '!'
+  - '?'
   - '§'
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: '-', h: LSHFT}
   - {t: '+', h: LCTRL}
@@ -152,7 +152,7 @@ layers:
   - {t: '(', h: RGUI}
   - {t: '{', h: RALT}
   - {t: '[', h: RCTRL}
-  - {t: '/', h: RSHFT}
+  - {t: '@', h: RSHFT}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '^'
@@ -174,17 +174,17 @@ layers:
   - {t: ▽, type: trans}
   media:
   - {t: ▽, type: trans}
-  - 'Apple'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - BSPC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

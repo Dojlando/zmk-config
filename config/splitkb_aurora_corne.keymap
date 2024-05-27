@@ -100,38 +100,38 @@
     };
     lower_layer {
 // -----------------------------------------------------------------------------------------
-// |      |     |  7  |  8  |  9  |     |   |     |     |     |     |     | BKSP |
-// |      |     |  4  |  5  |  6  |     |   | LFT | DWN |  UP | RGT |     |      |
-// |      |     |  1  |  2  |  3  |  0  |   |     |     |     |     |     |      |
+// |      |     |  7  |  8  |  9  |     |   |     |     |     |     |     |   |
+// |      |     |  4  |  5  |  6  |     |   | LFT | DWN |  UP | RGT |     |   |
+// |      |     |  1  |  2  |  3  |  0  |   |     |     |     |     |     |   |
 //                    |     |     |     |   |     |     |     |
     bindings = <
-      &trans &trans &kp N7       &kp N8        &kp N9      &trans      &trans   &kp LG(LA(LEFT)) &kp LG(LA(RIGHT)) &kp LG(LBKT)        &trans &kp BSPC
+      &trans &trans &kp N7       &kp N8        &kp N9      &trans      &trans   &kp LG(LA(LEFT)) &kp LG(LA(RIGHT)) &trans    &trans &trans
       &trans &trans &hm LCTRL N4 &hm LALT N5   &hm LGUI N6 &trans      &kp LEFT &kp DOWN         &kp UP            &kp RIGHT &trans &trans
-      &trans &trans &kp N1       &kp N2        &kp N3      &kp N0      &trans   &kp LA(LS(LEFT)) &kp LA(LS(RIGHT)) &trans              &trans &trans
+      &trans &trans &kp N1       &kp N2        &kp N3      &kp N0      &trans   &kp LA(LS(LEFT)) &kp LA(LS(RIGHT)) &trans    &trans &trans
                                  &trans        &trans      &trans      &trans   &trans           &trans
     >;
     };
     raise_layer {
 // -----------------------------------------------------------------------------------------
-// |   |  @  |  *  | "|" |  &  |  \  |   |  `  |  $  |  &  |  *  |  \  |  §  |
-// |   |  -  |  +  |  <  |  =  |  /  |   |  '  |  (  |  {  |  [  |  /  |     |
-// |   |  ^  |  ~  |  >  |  #  |  %  |   |  "  |  )  |  }  |  ]  |  €  |     |
+// |   |  @  |  *  | "|" |  &  |  \  |   |  `  |  $  |  !  |  ?  |  §  |   |
+// |   |  -  |  +  |  <  |  =  |  /  |   |  '  |  (  |  {  |  [  |  @  |   |
+// |   |  ^  |  ~  |  >  |  #  |  %  |   |  "  |  )  |  }  |  ]  |  €  |   |
 //                    |     |     |     |   |     |     |     |
     bindings = <
-      &trans &kp SE_AT         &kp SE_ASTR       &td LC(LG(LS(N4))) SE_PIPE &kp SE_AMPR     &kp SE_BSLS    &kp SE_ACUT &kp SE_DLR       &kp SE_AMPR      &kp SE_ASTR       &kp SE_BSLS       &kp SE_SECT
-      &trans &hm LSHFT SE_MINS &hm LCTRL SE_PLUS &hm LALT SE_LABK           &hm LGUI SE_EQL &kp SE_SLSH    &kp SE_QUOT &hm RGUI SE_LPRN &hm RALT SE_LCBR &hm RCTRL SE_LBRC &hm RSHFT SE_SLSH &trans
-      &trans &kp SE_CIRC       &kp SE_TILD       &kp SE_RABK                &kp SE_HASH     &kp SE_PERC    &kp SE_DQUO &kp SE_RPRN      &kp SE_RCBR      &kp SE_RBRC       &kp SE_EURO       &trans
+      &trans &kp SE_AT         &kp SE_ASTR       &td LC(LG(LS(N4))) SE_PIPE &kp SE_AMPR     &kp SE_BSLS    &kp SE_ACUT &kp SE_DLR       &kp SE_EXLM      &kp SE_QUES       &kp SE_SECT     &trans
+      &trans &hm LSHFT SE_MINS &hm LCTRL SE_PLUS &hm LALT SE_LABK           &hm LGUI SE_EQL &kp SE_SLSH    &kp SE_QUOT &hm RGUI SE_LPRN &hm RALT SE_LCBR &hm RCTRL SE_LBRC &hm RSHFT SE_AT &trans
+      &trans &kp SE_CIRC       &kp SE_TILD       &kp SE_RABK                &kp SE_HASH     &kp SE_PERC    &kp SE_DQUO &kp SE_RPRN      &kp SE_RCBR      &kp SE_RBRC       &kp SE_EURO     &trans
                                                  &trans                     &trans          &trans         &trans      &trans           &trans
     >;
     };
     media_layer {
 // -----------------------------------------------------------------------------------------
-// |  |    |  2  |  3  |  4  |  5   |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// |  |     |     |     |     |      |   |     |     |     |     |     |      |
-// |  | BT1 | BT2 | BT3 | BT4 | BTCLR|   |     |     |     |     |     |      |
+// |  |     |     |     |     |      |   |     |     |     |     |     |   |
+// |  |     |     |     |     |      |   |     |     |     |     |     |   |
+// |  | BT1 | BT2 | BT3 | BT4 | BTCLR|   |     |     |     |     |     |   |
 //                      |     |      |   |     |     |     |     |
     bindings = <
-      &trans &kp SE_APPL  &kp N2       &kp N3        &kp N4        &kp N5         &kp N6 &kp N7     &kp N8       &kp N9       &kp N0 &kp BSPC
+      &trans &trans       &trans       &trans        &trans        &trans         &trans &trans     &trans       &trans       &trans &trans
       &trans &trans       &trans       &kp C_BRI_DEC &kp C_BRI_INC &tog QWERTY    &trans &kp C_PREV &kp C_PP     &kp C_NEXT   &trans &trans
       &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR     &trans &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans &trans
                                        &trans        &trans        &trans         &trans &trans     &trans
