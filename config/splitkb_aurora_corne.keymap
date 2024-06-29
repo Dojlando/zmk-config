@@ -24,13 +24,13 @@
 
 / {
   combos {
-		compatible = "zmk,combos";
-		combo_layer_three {
-			timeout-ms = <50>;
-			key-positions = <37 40>;
-			bindings = <&mo MEDIA>;
-		};
-	};
+    compatible = "zmk,combos";
+    combo_layer_three {
+      timeout-ms = <50>;
+      key-positions = <37 40>;
+      bindings = <&mo MEDIA>;
+    };
+  };
   behaviors {
     hm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
@@ -74,15 +74,15 @@
 
     colemak_dh_layer {
 // -----------------------------------------------------------------------------------------
-// | ESC  |  Q  |  W  |  F   |  P  |  B  |   |  J   |  L   |  U  |  Y  |  Ö  |  Å   |
-// | TAB  |  A  |  R  |  S   |  T  |  G  |   |  M   |  N   |  E  |  I  |  O  |  Ä   |
-// | SHFT |  Z  |  X  |  C   |  D  |  V  |   |  K   |  H   |  ,  |  .  |  -  | RET  |
-//                    | SHFT | LWR | SPC |   | BKSP | RSE  | CTRL|
+// |  |  Q  |  W  |  F   |  P  |  B  |   |  J   |  L   |  U  |  Y  |  Ö  |  |
+// |  |  A  |  R  |  S   |  T  |  G  |   |  M   |  N   |  E  |  I  |  O  |  |
+// |  |  Z  |  X  |  C   |  D  |  V  |   |  K   |  H   |  ,  |  .  |  -  |  |
+//                | SHFT | LWR | SPC |   | BKSP | RSE  | CTRL|
     bindings = <
-      &kp ESC   &kp SE_Q       &kp SE_W       &kp SE_F          &kp SE_P          &kp SE_B                 &kp SE_J &kp SE_L      &kp SE_U            &kp SE_Y           &kp SE_ODIA    &kp SE_ARNG
-      &kp TAB   &hm LSHFT SE_A &hm LCTRL SE_R &hm LALT SE_S     &hm LGUI SE_T     &kp SE_G                 &kp SE_M &hm RGUI SE_N &hm RALT SE_E       &hm RCTRL SE_I     &hm RSHFT SE_O &kp SE_ADIA
-      &kp LSHFT &kp SE_Z       &kp SE_X       &td LG(SE_C) SE_C &td LG(SE_V) SE_D &kp SE_V                 &kp SE_K &kp SE_H      &td SE_EXLM SE_COMM &td SE_QUES SE_DOT &kp SE_MINS    &kp RET
-                                              &kp TAB           &los SYMB ONE_SHOT &mt LC(LS(LALT)) SPACE  &kp BSPC &lt NAVI ESC  &kp RET
+      &none &kp SE_Q       &kp SE_W       &kp SE_F       &kp SE_P      &kp SE_B                 &kp SE_J &kp SE_L      &kp SE_U      &kp SE_Y       &kp SE_ODIA    &none
+      &none &hm LSHFT SE_A &hm LCTRL SE_R &hm LALT SE_S  &hm LGUI SE_T &kp SE_G                 &kp SE_M &hm RGUI SE_N &hm RALT SE_E &hm RCTRL SE_I &hm RSHFT SE_O &none
+      &none &kp SE_Z       &kp SE_X       &kp SE_C       &kp SE_D      &kp SE_V                 &kp SE_K &kp SE_H      &kp SE_COMM   &kp SE_DOT     &kp SE_MINS    &none
+                                          &sl ONE_SHOT   &lt SYMB TAB  &mt LC(LS(LALT)) SPACE   &kp BSPC &lt NAVI ESC  &kp RET
     >;
     };
     qwerty_layer {

@@ -1,7 +1,7 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
 layers:
   colemak_dh:
-  - ESC
+  - {t: ▽, type: trans}
   - Q
   - W
   - F
@@ -12,8 +12,8 @@ layers:
   - U
   - Y
   - Ö
-  - Å
-  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: A, h: LSHFT}
   - {t: R, h: LCTRL}
   - {t: S, h: LALT}
@@ -24,21 +24,21 @@ layers:
   - {t: E, h: RALT}
   - {t: I, h: RCTRL}
   - {t: O, h: RSHFT}
-  - Ä
-  - LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - Z
   - X
-  - {t: C, h: Gui+ C}
-  - {t: D, h: Gui+ V}
+  - C
+  - D
   - V
   - K
   - H
-  - {t: ',', h: '!'}
-  - {t: '.', h: '?'}
+  - ','
+  - '.'
   - '-'
-  - RET
-  - TAB
-  - {t: one_shot, h: raise}
+  - {t: ▽, type: trans}
+  - one_shot
+  - {t: TAB, h: raise}
   - {t: SPACE, h: Ctl+Sft+ LALT}
   - BSPC
   - {t: ESC, h: lower}
