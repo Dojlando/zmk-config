@@ -9,8 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include "keys_se.h"
 
-#define COLEMAK   0
-#define QWERTY    1
+#define QWERTY    0
+#define COLEMAK   1
 #define NAVI      2
 #define SYMB      3
 #define MEDIA     4
@@ -72,19 +72,6 @@
   keymap {
     compatible = "zmk,keymap";
 
-    colemak_dh_layer {
-// -----------------------------------------------------------------------------------------
-// |  |  Q  |  W  |  F   |  P  |  B  |   |  J   |  L   |  U  |  Y  |  Ö  |  |
-// |  |  A  |  R  |  S   |  T  |  G  |   |  M   |  N   |  E  |  I  |  O  |  |
-// |  |  Z  |  X  |  C   |  D  |  V  |   |  K   |  H   |  ,  |  .  |  -  |  |
-//                | SHFT | LWR | SPC |   | BKSP | RSE  | CTRL|
-    bindings = <
-      &none &kp SE_Q       &kp SE_W       &kp SE_F       &kp SE_P      &kp SE_B                 &kp SE_J &kp SE_L      &kp SE_U      &kp SE_Y       &kp SE_ODIA    &none
-      &none &hm LSHFT SE_A &hm LCTRL SE_R &hm LALT SE_S  &hm LGUI SE_T &kp SE_G                 &kp SE_M &hm RGUI SE_N &hm RALT SE_E &hm RCTRL SE_I &hm RSHFT SE_O &none
-      &none &kp SE_Z       &kp SE_X       &kp SE_C       &kp SE_D      &kp SE_V                 &kp SE_K &kp SE_H      &kp SE_COMM   &kp SE_DOT     &kp SE_MINS    &none
-                                          &sl ONE_SHOT   &lt SYMB TAB  &mt LC(LS(LALT)) SPACE   &kp BSPC &lt NAVI ESC  &kp RET
-    >;
-    };
     qwerty_layer {
 // -----------------------------------------------------------------------------------------
 // | ESC  |  Q  |  W  |  E   |  R  |  T  |   |  Y   |  U   |  I  |  O  |  P  |  Å   |
@@ -96,6 +83,19 @@
       &kp TAB   &hm LSHFT SE_A &hm LCTRL SE_S &hm LALT SE_D     &hm LGUI SE_F     &kp SE_G                &kp SE_H &hm RGUI SE_J &hm RALT SE_K       &hm RCTRL SE_L     &hm RSHFT SE_ODIA &kp SE_ADIA
       &kp LSHFT &kp SE_Z       &kp SE_X       &td LG(SE_C) SE_C &td LG(SE_V) SE_V &kp SE_B                &kp SE_N &kp SE_M      &td SE_EXLM SE_COMM &td SE_QUES SE_DOT &kp SE_MINS       &kp RET
                                               &trans            &trans            &trans                  &trans   &trans        &trans
+    >;
+    };
+    colemak_dh_layer {
+// -----------------------------------------------------------------------------------------
+// |  |  Q  |  W  |  F   |  P  |  B  |   |  J   |  L   |  U  |  Y  |  Ö  |  |
+// |  |  A  |  R  |  S   |  T  |  G  |   |  M   |  N   |  E  |  I  |  O  |  |
+// |  |  Z  |  X  |  C   |  D  |  V  |   |  K   |  H   |  ,  |  .  |  -  |  |
+//                | SHFT | LWR | SPC |   | BKSP | RSE  | CTRL|
+    bindings = <
+      &none &kp SE_Q       &kp SE_W       &kp SE_F       &kp SE_P      &kp SE_B                 &kp SE_J &kp SE_L      &kp SE_U      &kp SE_Y       &kp SE_ODIA    &none
+      &none &hm LSHFT SE_A &hm LCTRL SE_R &hm LALT SE_S  &hm LGUI SE_T &kp SE_G                 &kp SE_M &hm RGUI SE_N &hm RALT SE_E &hm RCTRL SE_I &hm RSHFT SE_O &none
+      &none &kp SE_Z       &kp SE_X       &kp SE_C       &kp SE_D      &kp SE_V                 &kp SE_K &kp SE_H      &kp SE_COMM   &kp SE_DOT     &kp SE_MINS    &none
+                                          &sl ONE_SHOT   &lt SYMB TAB  &mt LC(LS(LALT)) SPACE   &kp BSPC &lt NAVI ESC  &kp RET
     >;
     };
     lower_layer {
@@ -132,7 +132,7 @@
 //                      |     |      |   |     |     |     |     |
     bindings = <
       &trans &trans       &trans       &trans        &trans        &trans         &trans &trans     &trans       &trans       &trans &trans
-      &trans &trans       &trans       &kp C_BRI_DEC &kp C_BRI_INC &tog QWERTY    &trans &kp C_PREV &kp C_PP     &kp C_NEXT   &trans &trans
+      &trans &trans       &trans       &kp C_BRI_DEC &kp C_BRI_INC &tog COLEMAK   &trans &kp C_PREV &kp C_PP     &kp C_NEXT   &trans &trans
       &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR     &trans &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans &trans
                                        &trans        &trans        &trans         &trans &trans     &trans
     >;
